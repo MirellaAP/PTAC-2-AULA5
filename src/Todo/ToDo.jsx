@@ -8,6 +8,7 @@ export default function ToDo() {
     const [id, setId] = useState(1);
     const [preco, setPreco] = useState(0)
     const [notas, setNotas] = useState("")
+    const [marca, setMarca] = useState ("")
     
 
     const salvar = (e) => {
@@ -16,12 +17,14 @@ export default function ToDo() {
             atividade: atividade,
             preco: preco,
             notas: notas,
+            marca: marca,
             id: id
         }]);
         setId(id + 1);
         setAtividade("");
         setPreco(0);
         setNotas("");
+        setMarca("");
     };
     const remover = (id) => {
         /*setLista(lista.filter((ativ) => (ativ.id !== id ? lista : null)));*/
@@ -38,7 +41,8 @@ export default function ToDo() {
             <Link to="/">home</Link>
             <h1>Lista de Atividades</h1>
             <form onSubmit={salvar}>
-                <input type="text"
+
+                <input placeholder="Nome" type="text"
                     value={atividade}
                     onChange={(e) => { setAtividade(e.target.value) }} />
                     <input type="number"
@@ -47,6 +51,9 @@ export default function ToDo() {
                       <input type="text"
                     value={notas}
                     onChange={(e) => { setNotas(e.target.value) }} />
+                    <input type="text"
+                    value={marca}
+                    onChange={(e) => { setMarca(e.target.value) }} />
                 <button>ADICIONAR</button>
             </form>
             {lista.map((ativ) =>
@@ -55,6 +62,7 @@ export default function ToDo() {
                         <p>{ativ.atividade}</p>
                         <p>{ativ.preco}</p>
                         <p>{ativ.notas}</p>
+                        <p>{ativ.marca}</p>
                         <button onClick={() => remover(ativ.id)}>Remover</button>
                     </li>
                 </ul>
