@@ -45,13 +45,16 @@ export default function ToDo() {
                 <input placeholder="Nome" type="text"
                     value={atividade}
                     onChange={(e) => { setAtividade(e.target.value) }} />
-                    <input type="number"
+
+                    <input placeholder="Preço" type="number"
                     value={preco}
                     onChange={(e) => { setPreco(e.target.value) }} />
-                      <input type="text"
+
+                      <input placeholder="Notas da fragrância" type="text"
                     value={notas}
                     onChange={(e) => { setNotas(e.target.value) }} />
-                    <input type="text"
+
+                    <input placeholder="Marca" type="text"
                     value={marca}
                     onChange={(e) => { setMarca(e.target.value) }} />
                 <button>ADICIONAR</button>
