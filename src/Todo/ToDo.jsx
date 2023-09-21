@@ -38,30 +38,35 @@ export default function ToDo() {
     }
     return (
         <div class="container">
-            <Link to="/">home</Link>
-            <h1>Lista de Atividades</h1>
+            <Link to="/">Acessar o Home</Link>
+            <h1>Lista de Perfumes</h1>
             <form onSubmit={salvar}>
 
-                <input placeholder="Nome" type="text"
+                <p class = "nome">Nome</p>
+                <input type="text"
                     value={atividade}
                     onChange={(e) => { setAtividade(e.target.value) }} />
-
-                    <input placeholder="Preço" type="number"
+                
+                    <p class = "nome">Preço</p>
+                    <input type="number"
                     value={preco}
                     onChange={(e) => { setPreco(e.target.value) }} />
 
-                      <input placeholder="Notas da fragrância" type="text"
+                    <p class = "nome">Notas</p>
+                      <input type="text"
                     value={notas}
                     onChange={(e) => { setNotas(e.target.value) }} />
 
-                    <input placeholder="Marca" type="text"
+                    <p class = "nome">Marca</p>
+                    <input type="text"
                     value={marca}
                     onChange={(e) => { setMarca(e.target.value) }} />
-                <button>ADICIONAR</button>
+                <button class = "botão">ADICIONAR</button>
             </form>
             {lista.map((ativ) =>
                 <ul key={ativ.id}>
                     <li>
+                        
                         <p>{ativ.atividade}</p>
                         <p>{ativ.preco}</p>
                         <p>{ativ.notas}</p>
