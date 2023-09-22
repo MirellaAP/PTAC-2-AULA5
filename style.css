@@ -1,5 +1,6 @@
 body {
     background-color: #2D0302;
+    text-align: center;
 }
 
 .titulo{
@@ -17,3 +18,66 @@ color: #FFF;
     color: #FFF;
 }
 
+.botao{
+    background-color: #45221E;
+    font-family: 'Cinzel Decorative', cursive;
+    color: #FFF;
+    border-radius: 10%;
+}
+
+.resposta{
+    font-family:  'Overpass', sans-serif;
+    color: #FFF;
+}
+
+.imagem{
+    width: 200px;
+    height: 200px;
+}
+
+.descricao{
+    font-family:  'Overpass', sans-serif;
+    color: #FFF;
+    background-color: #45221E;
+}
+
+.cardix{
+    background-color: #FFFF;
+    
+    display: inline-block;
+    width: 290px;
+    height: 400px;
+    padding: 5px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .perfume-h3{
+    padding: 5px;
+    font-family:'Cinzel Decorative', cursive;
+    font-size: 15px;
+    color: #A90623;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .perfume-p{
+        padding: 5px;
+        font-size: 15px;
+        font-family:'Overpass', sans-serif;
+        color: #A90623;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .perfume-p:hover{
+        padding: 5px;
+        margin: 0;
+        font-size: 18px;
+        font-family:'Overpass', sans-serif;
+        white-space: normal;
+      }

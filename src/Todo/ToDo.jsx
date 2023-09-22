@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
+
 export default function ToDo() {
     const [atividade, setAtividade] = useState("");
     const [lista, setLista] = useState([]);
@@ -9,6 +10,7 @@ export default function ToDo() {
     const [preco, setPreco] = useState(0)
     const [notas, setNotas] = useState("")
     const [marca, setMarca] = useState ("")
+    const [imagem, setImagem] = useState ("")
     
 
     const salvar = (e) => {
@@ -18,6 +20,7 @@ export default function ToDo() {
             preco: preco,
             notas: notas,
             marca: marca,
+            imagem: imagem,
             id: id
         }]);
         setId(id + 1);
@@ -25,6 +28,7 @@ export default function ToDo() {
         setPreco(0);
         setNotas("");
         setMarca("");
+        setImagem("");
     };
     const remover = (id) => {
         /*setLista(lista.filter((ativ) => (ativ.id !== id ? lista : null)));*/
@@ -61,17 +65,23 @@ export default function ToDo() {
                     <input type="text"
                     value={marca}
                     onChange={(e) => { setMarca(e.target.value) }} />
-                <button class = "botão">ADICIONAR</button>
+
+                    <p class = "nome">Imagem</p>
+                    <input type="text"
+                    value={imagem}
+                    onChange={(e) => { setImagem(e.target.value) }} />
+                <button class = "botao">ADICIONAR</button>
             </form>
             {lista.map((ativ) =>
                 <ul key={ativ.id}>
-                    <li>
+                    <li class = "resposta">
                         
                         <p>{ativ.atividade}</p>
                         <p>{ativ.preco}</p>
                         <p>{ativ.notas}</p>
                         <p>{ativ.marca}</p>
-                        <button onClick={() => remover(ativ.id)}>Remover</button>
+                        <img src={ativ.imagem} class = "imagem"></img>
+                        <button class = "botao" onClick={() => remover(ativ.id)}>Remover</button>
                     </li>
                 </ul>
             )}
