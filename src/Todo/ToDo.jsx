@@ -38,7 +38,7 @@ export default function ToDo() {
     }
     return (
         <div class="container">
-            <Link to="/">Acessar o Home</Link>
+            <Link to="/" class = "link">Acessar o Home</Link>
             <h1 class = "titulo">Lista de Perfumes</h1>
             <form onSubmit={salvar}>
 
