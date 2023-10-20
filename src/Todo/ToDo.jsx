@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 
 export default function ToDo() {
+    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
     const [atividade, setAtividade] = useState("");
-    const [lista, setLista] = useState([]);
+    const [lista, setLista] = useState(listaLocalStorage || []);
     const [id, setId] = useState(1);
     const [preco, setPreco] = useState(0)
     const [notas, setNotas] = useState("")
     const [marca, setMarca] = useState ("")
     const [imagem, setImagem] = useState ("")
     
+
+    useEffect(() => {
+        localStorage.setItem("Lista", JSON.stringify(lista));
+      }, [lista]);
 
     const salvar = (e) => {
         e.preventDefault();
@@ -30,16 +35,13 @@ export default function ToDo() {
         setMarca("");
         setImagem("");
     };
+   
     const remover = (id) => {
-        /*setLista(lista.filter((ativ) => (ativ.id !== id ? lista : null)));*/
-        const auxLista = [];
-        lista.map((lista) => {
-            if (lista.id !== id) {
-                auxLista.push(lista);
-            }
-        });
+        const auxLista = lista.filter((item) => item.id !== id);
         setLista(auxLista);
-    }
+      }
+
+
     return (
         <div class="container">
             <Link to="/" class = "link">Acessar o Home</Link>
