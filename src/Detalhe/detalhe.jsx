@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import Card from '../Componentes/Card';
 
 export default function Detalhe(){
     const {id} = useParams();
@@ -15,8 +16,6 @@ export default function Detalhe(){
     console.log( atividade[0] );
 
     return(
-        <div>
-            <h1>{id}</h1>
-        </div>
+        <Card atividade={atividade[0]} /> 
     );
 }
